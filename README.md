@@ -8,4 +8,4 @@
 
 Como atualizar: no repositório `financas`, branch `proposta-unificacao`, `cd frontend && SF_PROPOSTA=1 npm run build:demo`, trocar U+FFFD e caracteres de controle por `\uXXXX` e copiar `dist-demo/index.html` para cá.
 
-Última publicação: 29/10/2026.
+Última publicação: 29/10/2026 (versão unificada com a 0.9 mesclada).
