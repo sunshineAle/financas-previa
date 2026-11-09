@@ -1,0 +1,40 @@
+name: Publicar previa
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: publicar-previa
+  cancel-in-progress: false
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.publicar.outputs.page_url }}
+    steps:
+      - name: Ler arquivos da previa
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - name: Conferir compilacao
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json, re
+          html = Path('index.html').read_text()
+          assert 'faixa-previa' in html, 'Falta a faixa da previa'
+          assert json.loads(Path('previa.json').read_text())['anotacoes'] == [79, 80, 81]
+          for arquivo in re.findall(r'(?:src|href)="(\./assets/[^"?#]+)', html):
+              assert Path(arquivo).is_file(), f'Arquivo ausente: {arquivo}'
+          print('Compilacao da previa conferida.')
+          PY
+      - name: Preparar arquivos do site
+        uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3
+        with:
+          path: .
+      - name: Publicar somente a previa
+        id: publicar
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4
