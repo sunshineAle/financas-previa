@@ -1,23 +1,31 @@
-# Dagda Capital — prévia das anotações 79, 80 e 81
+# Dagda Capital — prévia 79–89
 
-**Use somente dados fictícios.** Esta prévia é gerada a partir da `main` atual do repositório privado `sunshineAle/financas`, versão 1.2.2, base `e583dcffc6360b930bbbe6d3b4844233300016cd`. Inclui as atualizações que não haviam passado pela prévia de 29/10, mais as anotações 79, 80 e 81 do Cérebro Central.
+Base: app atual 1.2.2 (`financas/main`, e583dcffc6360b930bbbe6d3b4844233300016cd), com as anotações 79–89 do Cérebro Central. O site oficial não é atualizado por esta publicação.
 
-- **79:** Restaurar meu Dagda sem criar perfil antes; nome recuperado e acesso com a senha do backup. Com código de recuperação, pede apenas uma nova senha. Backups antigos só recuperam o nome que efetivamente contêm.
-- **80:** backups Google na área oculta do app, com lista por data e tamanho para escolher. Entrar com Google procura na área oculta e na pasta antiga Dagda Capital, sem mover ou apagar arquivos. O login real depende da conta e da autorização Google.
-- **81:** regra de transferência com nome do titular; sugestões na importação e em A revisar, com confirmação. Valores diferentes não formam par; mais de uma ponta exige escolha.
+## Testar
 
-## Como testar
+- **Testar com dados fictícios** abre uma demonstração preenchida, sem cadastro ou senha, em um banco separado dos dados restaurados. Inclui um par PIX para A revisar.
+- **Entrar com Google** localiza backups ocultos e da pasta antiga Dagda Capital; a senha do backup continua necessária.
+- O login usa **Bem-vindo de volta**. Em Novo acesso, **Voltar** retorna às opções de entrada.
+- **Regras** mostra três recentes por criação em cada bloco, botão + no topo esquerdo e **Ver todas as regras** em uma janela. No computador os blocos ficam lado a lado.
+- O lembrete de backup abre uma confirmação curta usando o último destino. A data só muda depois de concluir a operação. O prazo existente é preservado; não há promessa de execução com app fechado.
+- A seleção de backup abre uma janela com senha e conteúdo após descriptografia e teste de importação em SQLite descartável, sem trocar os dados ativos. O nome do perfil e o acesso por PIN são preservados quando presentes no backup.
 
-1. Abra a prévia e use **Testar com dados fictícios**. A demonstração abre automaticamente, sem cadastro nem senha, com contas, cartões e um par PIX para revisar. Ela usa um banco separado dos dados restaurados.
-2. Para testar a anotação 79, baixe um backup fictício em Dados e backup, use **Voltar ao acesso / restaurar backup** e escolha **Restaurar meu Dagda** com esse arquivo.
-3. **Entrar com Google** fica visível na entrada e também no desbloqueio de quem já criou acesso. Para restaurar, busca os backups da área oculta e os antigos em Meu Drive/Dagda Capital, mostrando data e tamanho. Novos backups da prévia usam `previa-*.sfin`; a prévia não executa limpeza automática na nuvem.
-4. Para a 81, crie em **Regras** uma regra de transferência com nome completo de um titular fictício e importe um extrato fictício com PIX; confira a importação e A revisar.
+## Proteção das cópias
 
-O armazenamento da restauração usa `dagda-previa-79-81:`; a demonstração usa `dagda-previa-demo-79-81:` (localStorage, sessionStorage e IndexedDB), separado do app oficial e da prévia antiga. **Reiniciar prévia** limpa apenas esta versão de teste. Sem service worker e sem instalação.
+Novos backups Google são baixados de volta, comparados e testados em um banco isolado antes de liberar rotação para quatro. Exclusão manual exige outra cópia recuperada com o acesso atual. Se a recuperação não puder ser comprovada, o descarte é bloqueado e mais de quatro cópias podem ser preservadas.
+
+A prévia só gerencia arquivos `previa-*.sfin`. Cópias oficiais e pasta antiga são somente leitura aqui. A proteção do app não impede que alguém apague os dados ocultos diretamente nas configurações do Google ou em outro dispositivo. Mantenha também uma cópia local exportada. Backups na nuvem exigem criptografia ativa.
+
+Armazenamento da restauração: `dagda-previa-79-81:`; demonstração: `dagda-previa-demo-79-81:`. Esses prefixos foram mantidos para preservar os dados já usados nesta homologação. Sem service worker e sem instalação da prévia; **Como instalar o app** mostra as orientações do app oficial.
+
+## Validação
+
+27 testes unitários passaram, além dos fluxos de navegador descritos em [VALIDACAO.md](VALIDACAO.md). Google foi simulado nos testes; nenhum backup real foi enviado ou excluído. Os perfis Apple foram simulados em Chromium; aparelho Apple físico permanece pendente.
 
 ## Regerar
 
-No checkout privado de `financas`, na branch de trabalho com as três anotações:
+No checkout de desenvolvimento de financas, com as alterações da prévia:
 
 ```sh
 cd frontend
@@ -25,6 +33,4 @@ npm ci
 npx vite build -c vite.previa.config.js
 ```
 
-Copie `dist-previa/` para este repositório, preservando `.git`, README, robots.txt e `.nojekyll`; não copie `sw.js`, manifest ou ícones de instalação. Use os checkouts existentes, sem criar worktrees salvo pedido explícito.
-
-Os comandos de teste e detalhes estão em `financas/PREVIA-79-81.md`. A geração local e a publicação no GitHub Pages são etapas separadas.
+Copie dist-previa para este repositório, preservando .git, README, VALIDACAO, robots.txt, .nojekyll e .github. Não copie sw.js, manifest ou ícones de instalação. Use o checkout existente; não criar worktrees sem pedido explícito.
