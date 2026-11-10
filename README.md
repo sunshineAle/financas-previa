@@ -15,7 +15,7 @@ Base: app atual 1.2.2 (`financas/main`, e583dcffc6360b930bbbe6d3b4844233300016cd
 
 Google permanece no primeiro acesso/restauração e sai do desbloqueio diário. A demonstração fica apenas na faixa da prévia. A conexão Google reutiliza token válido e tenta renovar a sessão sem forçar consentimento; o Google ainda pode exigir confirmação. Tokens não são persistidos.
 
-A senha do backup inicia conferência após uma pausa ou Enter; só o botão final restaura. A exclusão antes de entrar explica por que está bloqueada; a gestão protegida permanece em Dados e backup. Tours de Regras e A revisar usam exemplos fictícios isolados e interativos, sem alterar lançamentos. Categorizar um pagamento não quita nem vincula uma dívida.
+A senha do backup inicia conferência após uma pausa ou Enter; só o botão final restaura. A exclusão antes de entrar explica por que está bloqueada; a gestão protegida permanece em Dados e backup. Tours de Regras e A revisar usam gravações das telas reais no formato celular, com dados fictícios, anel e gestos animados. A imagem é demonstrativa e não contém campos ou ações utilizáveis; não altera lançamentos. Categorizar um pagamento não quita nem vincula uma dívida.
 
 ## Proteção das cópias
 

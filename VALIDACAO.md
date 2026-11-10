@@ -44,3 +44,9 @@ Google simulado; nenhum backup real foi enviado, apagado ou movido. O teste isol
 - Tours interativos substituem WebP vazio de Regras e A revisar; exemplos fictícios com transferência, despesa, parcela e guardar/resgatar. Comparação das tabelas antes/depois idêntica e nenhuma chamada mutante à API em390/1366px. Categorizar parcela não vincula nem quita dívida.
 - Regras390/1366px: + na extremidade oposta à implementação anterior (direita nesta compilação), três recentes, edição e popup preservados.
 - Regressões de restauração local/Google legado, nome/PIN, corrupção, banco isolado, rotação6→4, última recuperável e lembretes passaram. Nenhum backup real usado.
+
+## Correção do padrão dos tours (10/11/2026)
+
+O dono rejeitou a apresentação interativa da compilação4368318. Os tours de Regras e A revisar voltam ao componente original, com imagem vertical da tela real, animação WebP, anel/gesto de destaque e largura original da janela. A demonstração não possui campos, seletores ou ações utilizáveis. Novas gravações usam dados fictícios em contexto de navegador descartável; não preenchem o banco do usuário. Os testes de exemplos interativos anteriores ficam como histórico da versão rejeitada, não como especificação atual.
+
+Gravações finais: WebP300×585, quatro passos por tour, Regras12,38s e A revisar12s. Conferidos quadros de cada passo com dados preenchidos e anel animado. Testes em390/1366px passaram: imagens carregadas, avanço automático sincronizado ao texto, sem controles na demonstração, banco idêntico antes/depois e nenhuma chamada de escrita à API. Teste anterior interativo foi substituído por `tests/tours-gravados.py`.
