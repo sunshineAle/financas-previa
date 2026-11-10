@@ -1,6 +1,6 @@
-# Validação da prévia 79–89
+# Validação da prévia 79–97
 
-Base oficial: Dagda Capital 1.2.2, `financas/main` em `e583dcffc6360b930bbbe6d3b4844233300016cd`, conferida no GitHub em 09/11/2026. As telas, componentes e inicialização são os mesmos da base atual, com as anotações 79 a 89 acrescentadas. O site oficial não foi publicado nem alterado.
+Base oficial: Dagda Capital 1.2.2, `financas/main` em `e583dcffc6360b930bbbe6d3b4844233300016cd`, conferida no GitHub em 09/11/2026. As telas, componentes e inicialização são os mesmos da base atual, com as anotações 79 a 97 acrescentadas. O site oficial não foi publicado nem alterado.
 
 - Build de homologação concluído.
 - 15 testes do backend: reconhecimento e confirmação de transferências, valor exato, ambiguidade, estorno, recusa persistente, isolamento por usuário, importação e regressão do reconhecimento anterior.
@@ -14,7 +14,7 @@ A compilação foi validada na branch `previa/anotacoes-79-81` para publicação
 
 ## Correção da entrada e do backup antigo
 
-- Google e demonstração visíveis desde a entrada, inclusive com acesso já configurado.
+- Google disponível no primeiro acesso/restauração; removido do desbloqueio diário na anotação90. Demonstração acessível pela faixa própria da prévia.
 - Demonstração abre automaticamente com dados fictícios, em banco separado da restauração.
 - Caso de navegador validado: área oculta vazia, pasta antiga com arquivo .sfin PBKDF2, seleção e senha do backup, nome e contas recuperados sem novo perfil. Todas as requisições ao Drive nesse teste foram GET.
 - Google simulado nos testes; autorização real permanece com o usuário. Não foram usados dados ou backups reais na implementação.
@@ -32,3 +32,15 @@ A compilação foi validada na branch `previa/anotacoes-79-81` para publicação
 - Readback divergente não mudou a data do último backup nem autorizou exclusões.
 
 Google simulado; nenhum backup real foi enviado, apagado ou movido. O teste isolado valida importação, integridade, referências e contagens; não substitui a homologação de todas as operações do usuário em um aparelho real.
+
+## Anotações 90–97 (10/11/2026)
+
+- 38 testes unitários passaram:15 transferências,8 instalação,15 conector Google.
+- Desbloqueio diário por PIN sem Google/Testar; primeiro acesso conserva Google e restauração. Demonstração na faixa da prévia.
+- Instalação adaptada em iPhone390px, Mac e desktop1366px; convite nativo ou instruções conforme capacidade. Prévia não instala. Orientação evita afirmação absoluta de única maneira. Apple físico/Safari continuam pendentes.
+- Google simulado: reuso de token válido, recarga, expiração,401, revogação, escopo parcial/adicional, concorrência e callback atrasado após desconectar. Tokens ficam só em memória; vínculo público não prova autorização atual.
+- Conferência automática após700ms ou Enter; Worker real com resposta atrasada e troca de senha/arquivo não libera resultado antigo. CTA central, sem aplicação automática. Chave mestra associada ao conteúdo específico por WeakMap, sem depender da última tentativa global.
+- Entrada explica exclusão bloqueada; gestão oferece exclusão somente das cópias gerenciáveis da prévia. Oficiais/legadas somente leitura; cancelar não faz escrita remota.
+- Tours interativos substituem WebP vazio de Regras e A revisar; exemplos fictícios com transferência, despesa, parcela e guardar/resgatar. Comparação das tabelas antes/depois idêntica e nenhuma chamada mutante à API em390/1366px. Categorizar parcela não vincula nem quita dívida.
+- Regras390/1366px: + na extremidade oposta à implementação anterior (direita nesta compilação), três recentes, edição e popup preservados.
+- Regressões de restauração local/Google legado, nome/PIN, corrupção, banco isolado, rotação6→4, última recuperável e lembretes passaram. Nenhum backup real usado.
