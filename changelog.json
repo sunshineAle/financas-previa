@@ -1,28 +1,24 @@
 [
   {
-    "versao": "1.2.2",
-    "data": "2026-11-05",
-    "resumo": "\"A revisar\" virou uma página própria e agora traz também os lançamentos sem categoria, para escolher a categoria ou ignorar ali mesmo.",
+    "versao": "1.4.1",
+    "data": "2026-11-12",
+    "resumo": "Movimentação própria para dinheiro seu que entra ou sai de uma conta fora do Dagda. Em A revisar, a categoria é escolhida na janela do sistema, com a opção de criar a regra ali mesmo.",
     "itens": [
-      "A revisar: página própria (menu lateral, card do Início ou a faixa \"N lançamentos para revisar\" em Transações e em Metas).",
-      "Cada lançamento mostra só a linha da transação, a escolha da meta e o rendimento lado a lado, e os botões Vincular / Não vincular (no resgate: Vincular · De fora · Entrada). Saíram os textos longos.",
-      "A revisar › Sem categoria: lançamentos de conta e compras de cartão sem categoria (ou na Geral). Escolha a categoria e toque em Salvar; nos de conta, também dá para Ignorar."
+      "Movimentação própria: dinheiro seu que entra ou sai de uma conta que não está no Dagda. O valor mexe no saldo da sua conta e aparece nas entradas e saídas do mês com essa categoria, mas não conta como receita, despesa nem orçamento.",
+      "Conferir origem agora vale também para saídas, inclusive TED, DOC e boleto. Dá para voltar à categoria de antes a qualquer momento.",
+      "A revisar: Editar e Ignorar lado a lado. Categorias e subcategorias em botões, e a opção Criar regra no topo, desmarcada, antes de salvar."
     ]
   },
   {
-    "versao": "1.2",
-    "data": "2026-11-05",
-    "resumo": "Guardar/Resgatar soltos no extrato agora podem ser apagados, o cheque especial só aparece em conta que tem, cada meta pode render o seu % do CDI e a fatura entende melhor parcelamento, saldo anterior e siglas do banco.",
+    "versao": "1.4",
+    "data": "2026-11-10",
+    "resumo": "Reconhecimento de transferências com nome do titular e revisão mais clara. Confira conflitos com regras e valores que vieram de um saldo seu fora do Dagda, sem cadastrar todas as suas contas.",
     "itens": [
-      "Metas: ao apagar um lançamento que veio do extrato, o app pergunta se ele sai também do extrato da conta. No extrato, Guardar e Resgatar podem ser excluídos (o valor sai da meta junto). Lançamentos que tinham ficado presos voltam para \"A revisar\".",
-      "Contas: nova opção \"Tem cheque especial?\" na conta corrente, com limite e juros. Sem ela, saldo negativo não vira dívida: a conta mostra um aviso para conferir os lançamentos ou ajustar o saldo.",
-      "Metas: campo \"Rende quanto do CDI?\" (ex.: 89%). Poupança segue a regra da poupança. O rendimento mostrado é bruto, antes do IR.",
-      "Fatura: siglas como \"PG ENT PR EF\" e \"VL FAT EF\" passam a fechar a fatura anterior (não viram estorno). Na conferência da importação há a opção \"Pagamento/fechamento da fatura anterior\".",
-      "Fatura parcelada: o app pergunta se o banco cobra as parcelas na própria fatura. Se sim, a fatura fica quitada e não nasce dívida (antes contava duas vezes).",
-      "Importar fatura: quando o total do banco é maior que a soma das linhas, o app oferece lançar a diferença como saldo anterior (não é gasto novo) ou encargos.",
-      "Cartão: escolha se a compra feita no dia do fechamento vai para esta fatura ou para a próxima.",
-      "Registrar pagamento: opção \"Paga fora do período / sem conta de origem\", que não mexe em saldo. Aviso para faturas de mais de 2 meses atrás.",
-      "Importar extrato: o app compara o saldo do banco com o do app na mesma data e oferece Ajustar saldo. Na conta, dá para apagar de uma vez os lançamentos de antes do saldo inicial."
+      "Perfil: nome completo do titular separado do apelido, para sugerir transferências mesmo com nomes cortados no extrato.",
+      "A revisar mostra as contas, datas e valores de cada ponta no padrão do sistema, com menos texto.",
+      "PIX já classificado por regra só gera conflito quando há indícios relevantes; você escolhe manter a classificação ou revisar a transferência.",
+      "Conferir origem permite distinguir receita, outra conta cadastrada e saldo próprio fora do Dagda. O dinheiro já registrado não é somado novamente.",
+      "Decisões preservadas no backup; confirmação explícita para mudar a classificação."
     ]
   }
 ]

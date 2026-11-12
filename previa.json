@@ -1,27 +1,11 @@
 {
-  "base_versao": "1.2.2",
-  "base_commit": "e583dcffc6360b930bbbe6d3b4844233300016cd",
+  "base_versao": "1.4",
+  "base_commit": "60a0482a4cb158c35b501817fb640cbdf58ea3a2",
   "anotacoes": [
-    79,
-    80,
-    81,
-    82,
-    83,
-    84,
-    85,
-    86,
-    87,
-    88,
-    89,
-    90,
-    91,
-    92,
-    93,
-    94,
-    95,
-    96,
-    97
+    103,
+    104
   ],
   "ambiente": "prévia de homologação",
-  "revisao": "tours-gravados-padrao-original"
+  "revisao": "movimentacao-propria-e-a-revisar",
+  "versao": "1.4.1"
 }
